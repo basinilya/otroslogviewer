@@ -14,6 +14,7 @@ build
 .project
 .settings/
 bin/
+/OtrosAppDist/classpath.txt
 # Eclipse Scala IDE files
 .cache-main
 .cache-tests
