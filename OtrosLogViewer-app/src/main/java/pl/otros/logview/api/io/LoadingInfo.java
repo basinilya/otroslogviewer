@@ -60,7 +60,7 @@ public final class LoadingInfo implements AutoCloseable {
     friendlyUrl = fileObject.getName().getFriendlyURI();
 
     fileObject.refresh();
-    LOGGER.info("xxxxxxxxxx getting InputStream for " + fileObject.toString());
+    LOGGER.info("xxxxxxxxxx getting InputStream for content: " + fileObject.toString() + " and size: " + fileObject.getContent().getSize());
     InputStream inputStream = fileObject.getContent().getInputStream();
     byte[] probe = loadProbe(inputStream, 10000);
     gzipped = checkIfIsGzipped(probe, probe.length);
