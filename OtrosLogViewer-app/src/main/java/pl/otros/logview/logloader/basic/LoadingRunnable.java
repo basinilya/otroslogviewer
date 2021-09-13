@@ -141,7 +141,10 @@ public class LoadingRunnable implements Runnable {
         LOGGER.warn("Can't initialize start position for tailing. Can duplicate some values for small files");
       }
 
+      int iAttempt = 0;
+      
       while (parsingContext.isParsingInProgress()) {
+    	  LOGGER.info("xxxxx attempt: " + iAttempt);
         try {
           SleepAction action;
           obserableInputStreamImpl = Optional.of(loadingInfo.getObservableInputStreamImpl());
