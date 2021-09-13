@@ -29,10 +29,13 @@ import java.util.zip.GZIPInputStream;
 
 import org.apache.commons.vfs2.FileObject;
 import org.apache.commons.vfs2.RandomAccessContent;
+import org.slf4j.Logger;
 
 import pl.otros.logview.gui.session.OpenMode;
 
 public final class LoadingInfo implements AutoCloseable {
+
+  private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(LoadingInfo.class);
 
   private final String friendlyUrl;
   private final FileObject fileObject;
@@ -57,6 +60,7 @@ public final class LoadingInfo implements AutoCloseable {
     friendlyUrl = fileObject.getName().getFriendlyURI();
 
     fileObject.refresh();
+    LOGGER.info("xxxxxxxxxx getting InputStream for " + fileObject.toString());
     InputStream inputStream = fileObject.getContent().getInputStream();
     byte[] probe = loadProbe(inputStream, 10000);
     gzipped = checkIfIsGzipped(probe, probe.length);
