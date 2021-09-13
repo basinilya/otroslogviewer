@@ -162,6 +162,7 @@ public class LoadingRunnable implements Runnable {
             updateStats(loadingInfo);
           }
           if (SleepAction.Sleep == action) {
+        	  LOGGER.info("xxxxx sleeping");
             Thread.sleep(sleepTime);
           } else if (SleepAction.Break == action) {
             LOGGER.debug("Log import stopped");
@@ -212,6 +213,7 @@ public class LoadingRunnable implements Runnable {
   }
 
   public synchronized void pause() {
+	  LOGGER.info("xxxxx pause");
     pause = true;
   }
 
