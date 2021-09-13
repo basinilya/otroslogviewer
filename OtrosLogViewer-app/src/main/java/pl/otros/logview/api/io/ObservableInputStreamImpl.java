@@ -19,8 +19,11 @@ import pl.otros.logview.api.Stoppable;
 
 import java.io.IOException;
 import java.io.InputStream;
+import org.slf4j.Logger;
 
 public class ObservableInputStreamImpl extends InputStream implements ObservableStream, Stoppable {
+
+  private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(ObservableInputStreamImpl.class);
 
   private final InputStream src;
   private long current;
@@ -47,6 +50,7 @@ public class ObservableInputStreamImpl extends InputStream implements Observable
   }
 
   public void close() throws IOException {
+	  LOGGER.info("xxxxxx " + System.identityHashCode(this) + " close");
     super.close();
     src.close();
   }

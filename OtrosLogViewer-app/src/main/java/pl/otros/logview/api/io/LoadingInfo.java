@@ -77,6 +77,7 @@ public final class LoadingInfo implements AutoCloseable {
       observableInputStreamImpl = new ObservableInputStreamImpl(randomAccessContent.getInputStream());
       contentInputStream = observableInputStreamImpl;
     }
+	  LOGGER.info("xxxxxx " + System.identityHashCode(observableInputStreamImpl) + " open");
 
     if (fileObject.getType().hasContent()) {
       lastFileSize = fileObject.getContent().getSize();
