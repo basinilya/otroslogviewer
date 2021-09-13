@@ -166,7 +166,8 @@ project(':OtrosLogViewer-app') {
 
     test {
         useTestNG()
-        maxParallelForks = 2
+        maxParallelForks = 1
+        allJvmArgs = [ '-Xrunjdwp:transport=dt_socket,address=0.0.0.0:8787,server=y,suspend=y' ]
     }
 }
 
