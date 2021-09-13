@@ -50,7 +50,7 @@ public class ObservableInputStreamImpl extends InputStream implements Observable
   }
 
   public void close() throws IOException {
-	  LOGGER.info("xxxxxx " + System.identityHashCode(this) + " close");
+	  LOGGER.info("xxxxxx " + System.identityHashCode(this) + " close", new Exception());
     super.close();
     src.close();
   }
