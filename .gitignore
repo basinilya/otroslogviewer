@@ -10,3 +10,10 @@ build
 /gradle-app.setting
 **/*.iml
 **/.idea
+.classpath
+.project
+.settings/
+bin/
+# Eclipse Scala IDE files
+.cache-main
+.cache-tests
