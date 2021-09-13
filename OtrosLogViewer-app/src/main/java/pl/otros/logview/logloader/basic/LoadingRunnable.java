@@ -145,6 +145,7 @@ public class LoadingRunnable implements Runnable {
       
       while (parsingContext.isParsingInProgress()) {
     	  LOGGER.info("xxxxx attempt: " + iAttempt);
+    	  iAttempt++;
         try {
           SleepAction action;
           obserableInputStreamImpl = Optional.of(loadingInfo.getObservableInputStreamImpl());
